@@ -33,9 +33,32 @@ with canvas(device) as draw:
     sleep(5)
 
 # Display the main content after the splash screen
-value = True
+# Main loop
+while True:
 
-while (value):
+    # Check if the connection to qvcuk.com is successful
+    try:
+        response = requests.get("https://www.qvcuk.com/")
+        if response.status_code == 200:
+            pass
+        else:
+            # Display a "please wait..." screen if the connection is not successful
+
+            ErrorText = "An error has been encoutered. Please wait, retrying..."
+
+            with canvas(device) as draw:
+                draw.rectangle((0, 0, 255, 95), outline=0, fill=0)
+                draw.text((10, 20), ErrorText, align='center', font=splash_font, fill="white")
+                sleep(30)
+            continue
+    except Exception as e:
+        # Display a "please wait..." screen if there is an exception
+        with canvas(device) as draw:
+            draw.rectangle((0, 0, 255, 95), outline=0, fill=0)
+            draw.text((10, 20), ErrorText, align='center', font=splash_font, fill="white")
+            sleep(30)
+        continue
+
     # Fetch data from QVC website
     main_response = requests.get('https://www.qvcuk.com/ioa?channelCode=QVC')
     beauty_response = requests.get('https://www.qvcuk.com/ioa?channelCode=QBY')
