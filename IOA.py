@@ -43,19 +43,16 @@ while True:
             pass
         else:
             # Display a "please wait..." screen if the connection is not successful
-
-            ErrorText = "An error has been encoutered. Please wait, retrying..."
-
             with canvas(device) as draw:
                 draw.rectangle((0, 0, 255, 95), outline=0, fill=0)
-                draw.text((10, 20), ErrorText, align='center', font=splash_font, fill="white")
+                draw.text((10, 20), "Please wait, retrying...", font=splash_font, fill="white")
                 sleep(30)
             continue
     except Exception as e:
         # Display a "please wait..." screen if there is an exception
         with canvas(device) as draw:
             draw.rectangle((0, 0, 255, 95), outline=0, fill=0)
-            draw.text((10, 20), ErrorText, align='center', font=splash_font, fill="white")
+            draw.text((10, 20), "Please wait, retrying...", font=splash_font, fill="white")
             sleep(30)
         continue
 
