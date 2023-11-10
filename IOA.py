@@ -106,20 +106,20 @@ while True:
         draw.text((45, 14), main_item_numbers[0], font=font, fill="white")
         draw.text((92, 14), main_description[0], font=font, fill="white")
 
-        # Display beauty channel information
-        draw.text((0, 26), "Beauty:", font=font, fill="white")
-        draw.text((45, 26), beauty_item_numbers[0], font=font, fill="white")
-        draw.text((92, 26), beauty_description[0], font=font, fill="white")
-
         # Display extra channel information
-        draw.text((0, 38), "Extra:", font=font, fill="white")
-        draw.text((45, 38), extra_item_numbers[0], font=font, fill="white")
-        draw.text((92, 38), extra_description[0], font=font, fill="white")
+        draw.text((0, 26), "Extra:", font=font, fill="white")
+        draw.text((45, 26), extra_item_numbers[0], font=font, fill="white")
+        draw.text((92, 26), extra_description[0], font=font, fill="white")
 
         # Display style channel information
-        draw.text((0, 50), "Style:", font=font, fill="white")
-        draw.text((45, 50), style_item_numbers[0], font=font, fill="white")
-        draw.text((92, 50), style_description[0], font=font, fill="white")
+        draw.text((0, 38), "Style:", font=font, fill="white")
+        draw.text((45, 38), style_item_numbers[0], font=font, fill="white")
+        draw.text((92, 38), style_description[0], font=font, fill="white")
+
+        # Display beauty channel information
+        draw.text((0, 50), "Beauty:", font=font, fill="white")
+        draw.text((45, 50), beauty_item_numbers[0], font=font, fill="white")
+        draw.text((92, 50), beauty_description[0], font=font, fill="white")
 
         sleep(60)  # Delay of one minute between updates
 
