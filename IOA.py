@@ -18,13 +18,15 @@ import datetime
 from lxml.html import fromstring
 from lxml import html
 import re
+import os
 
 serial = spi(device=0, port=0)
 device = ssd1322(serial)
 
 # Define the font
-font = ImageFont.truetype("/home/wackett/QVC/Roboto-Regular.ttf", 12)
-splash_font = ImageFont.truetype("/home/wackett/QVC/Roboto-Regular.ttf", 22)
+font_path = os.path.join(os.getcwd(), "Fonts", "Roboto-Regular.ttf")
+font = ImageFont.truetype(font_path, 12)
+splash_font = ImageFont.truetype(font_path, 22)
 
 # Display splash screen
 with canvas(device) as draw:
